@@ -45,6 +45,7 @@ class _ApnaSearchState extends State<ApnaSearch> {
                                   "https://www.google.com/search?q=${txtsearch.text}"),
                             ),
                           );
+
                         },
                       ),
                     ),
