@@ -29,7 +29,6 @@ class _ApnaSearchState extends State<ApnaSearch> {
                       borderRadius: BorderRadius.circular(15)),
                   child: TextField(
                     controller: txtsearch,
-                    textInputAction: TextInputAction.next,
 
                     decoration: InputDecoration(
                       border: InputBorder.none,
