@@ -1,5 +1,7 @@
+import 'package:advanceflutter/provider/apnaprovider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
 class ApnaSearch extends StatefulWidget {
@@ -10,11 +12,31 @@ class ApnaSearch extends StatefulWidget {
 }
 
 class _ApnaSearchState extends State<ApnaSearch> {
+
+  ApnaProvider? apT;
+  ApnaProvider? apF;
+
   TextEditingController txtsearch = TextEditingController();
   InAppWebViewController? webcontroller;
+  PullToRefreshController? pullToRefreshController;
+
+
+  @override
+  void initState() {
+    pullToRefreshController = PullToRefreshController(
+        onRefresh: () {
+          webcontroller!.reload();
+        },);
+    super.initState();
+  }
+
 
   @override
   Widget build(BuildContext context) {
+
+    apT = Provider.of<ApnaProvider>(context);
+    apF = Provider.of<ApnaProvider>(context,listen: false);
+
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -52,22 +74,43 @@ class _ApnaSearchState extends State<ApnaSearch> {
                 ),
               ],
             ),
+            LinearProgressIndicator(
+              value: apT!.p1,
+              backgroundColor: Colors.lightBlue.shade50,
+
+            ),
             Expanded(
               child: InAppWebView(
+
                 initialUrlRequest:
                     URLRequest(url: Uri.parse("https://www.google.com/")),
+
                 onLoadStart: (controller, url) {
                   webcontroller = controller;
+                  pullToRefreshController!.endRefreshing();
                 },
+
                 onLoadStop: (controller, url) {
                   webcontroller = controller;
-
+                  pullToRefreshController!.endRefreshing();
                 },
-                onLoadError: (controller, url, code, message) {},
+
+                onLoadError: (controller, url, code, message) {
+                  webcontroller = controller;
+                  pullToRefreshController!.endRefreshing();
+                },
+
                 onProgressChanged: (controller, progress) {
                   webcontroller = controller;
+                  pullToRefreshController!.endRefreshing();
+
+                  apF!.changeprogress((progress/100).toDouble());
 
                 },
+
+                pullToRefreshController: pullToRefreshController,
+
+
               ),
             ),
             Row(
