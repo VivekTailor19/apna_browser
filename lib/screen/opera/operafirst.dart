@@ -52,10 +52,29 @@ class _Opera_FirstState extends State<Opera_First> {
                 ),
               ),
 
+              Container()
+
             ],
           ),
         ),
       ),
+    );
+  }
+
+  Widget HomeTabs() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Container(
+          height: 55,
+          width: 55,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),
+              image: DecorationImage(image: NetworkImage(""))),
+                ),
+        SizedBox(height: 8),
+        Text("",style: TextStyle(fontSize: 13),)
+      ],
     );
   }
 }

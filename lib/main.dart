@@ -1,5 +1,6 @@
 import 'package:advanceflutter/provider/apnaprovider.dart';
 import 'package:advanceflutter/screen/apnasearch.dart';
+import 'package:advanceflutter/screen/opera/opera_provider.dart';
 import 'package:advanceflutter/screen/opera/operafirst.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -14,7 +15,8 @@ void main() {
        builder: (context) =>
       MultiProvider(
          providers: [
-          ChangeNotifierProvider(create: (context) => ApnaProvider(),)
+          ChangeNotifierProvider(create: (context) => ApnaProvider(),),
+          ChangeNotifierProvider(create: (context) => OperaProvider(),)
         ],
        child: Sizer(
           builder: (context, orientation, deviceType) => MaterialApp(
