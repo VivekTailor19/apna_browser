@@ -45,14 +45,11 @@ class _Opera_FirstState extends State<Opera_First> {
                     ),
                   hintText: "Search here...",
                   hintStyle: TextStyle(color: Colors.black26),
-
-
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(25),)
-
                 ),
               ),
 
-              Container()
+
             ],
           ),
         ),
