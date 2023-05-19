@@ -13,13 +13,13 @@ class OperaProvider extends ChangeNotifier
     OperaModel(name: "HotStar",link: "https://www.hotstar.com/in",logo: "https://play-lh.googleusercontent.com/Vd6XKGvZKp8r3Ikz4vRykNJaMjFULqftsqviOsMPepYTOu4ef-4HkUo3iEcPpOi4c2s"),
     OperaModel(name: "SonyLiv",link: "https://www.sonyliv.com/",logo: "https://images.news18.com/ibnlive/uploads/2020/06/1592394351_sonyliv-new-logo.jpg"),
     OperaModel(name: "Discovery +",link: "https://www.discoveryplus.in/",logo: "https://www.flickonclick.com/wp-content/uploads/2022/09/How-to-Get-Discovery-Plus-Subscription-for-Free-696x522.jpg"),
-    OperaModel(name: "TATAPlay Binge",link: "https://www.tataplaybinge.com/",logo: "https://yt3.googleusercontent.com/Gy0oXhS6bUEA6Jwib3qGE6nCvOFYaTQdD2UsmO-uwhZy1rIrbgcIcxJGdZVfjV7XcfPoRjwRKw=s900-c-k-c0x00ffffff-no-rj"),
-    OperaModel(name: "W3School",link: "https://www.w3schools.com/",logo: "assets/images/platform/w3school.png"),
-    OperaModel(name: "JavatPoint",link: "https://www.javatpoint.com/",logo: "assets/images/platform/javatpoint.png"),
-    OperaModel(name: "Tutorials Point",link: "https://www.tutorialspoint.com/index.htm",logo: "assets/images/platform/tutorialpoints.png"),
-    OperaModel(name: "Great Learning",link: "https://www.mygreatlearning.com/",logo: "assets/images/platform/greatlearning.png"),
-    OperaModel(name: "SimpliLearn",link: "https://www.simplilearn.com/",logo: "assets/images/platform/simplilearn.png"),
-    OperaModel(name: "Free Code Camp",link: "https://www.freecodecamp.org/",logo: "assets/images/platform/freecodecamp.png"),
+    OperaModel(name: "TATAPlay",link: "https://www.tataplaybinge.com/",logo: "https://yt3.googleusercontent.com/Gy0oXhS6bUEA6Jwib3qGE6nCvOFYaTQdD2UsmO-uwhZy1rIrbgcIcxJGdZVfjV7XcfPoRjwRKw=s900-c-k-c0x00ffffff-no-rj"),
+    // OperaModel(name: "W3School",link: "https://www.w3schools.com/",logo: "assets/images/platform/w3school.png"),
+    // OperaModel(name: "JavatPoint",link: "https://www.javatpoint.com/",logo: "assets/images/platform/javatpoint.png"),
+    // OperaModel(name: "Tutorials Point",link: "https://www.tutorialspoint.com/index.htm",logo: "assets/images/platform/tutorialpoints.png"),
+    // OperaModel(name: "Great Learning",link: "https://www.mygreatlearning.com/",logo: "assets/images/platform/greatlearning.png"),
+    // OperaModel(name: "SimpliLearn",link: "https://www.simplilearn.com/",logo: "assets/images/platform/simplilearn.png"),
+    // OperaModel(name: "Free Code Camp",link: "https://www.freecodecamp.org/",logo: "assets/images/platform/freecodecamp.png"),
   ];
 
 }
