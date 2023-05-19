@@ -38,6 +38,7 @@ class _Opera_FirstState extends State<Opera_First> {
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               children: [
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
