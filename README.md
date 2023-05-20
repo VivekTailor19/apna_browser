@@ -1,8 +1,11 @@
 # apna_browser
+<img src = "https://github.com/VivekTailor19/apna_browser/assets/119835214/b3378136-2f5c-40fe-8f90-8721e4272e06" height="500" width="280">
+
 
 # Web Browser using Flutter
 
 <p>
+  
 https://github.com/VivekTailor19/apna_browser/assets/119835214/2eecdba9-71f6-4ba0-935f-5c7d8eeeed42
 
 <img src = "https://github.com/VivekTailor19/apna_browser/assets/119835214/306eb0b9-19ff-4181-92dd-83a83b817eb4" height="500" width="280">
