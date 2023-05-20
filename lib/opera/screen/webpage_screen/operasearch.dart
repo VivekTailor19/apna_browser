@@ -1,18 +1,19 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:provider/provider.dart';
 
-import 'opera_provider.dart';
+import '../../provider/opera_provider.dart';
 
-class Opera_HomeTab_View extends StatefulWidget {
-  const Opera_HomeTab_View({Key? key}) : super(key: key);
+
+
+class OperaSearch extends StatefulWidget {
+  const OperaSearch({Key? key}) : super(key: key);
 
   @override
-  State<Opera_HomeTab_View> createState() => _Opera_HomeTab_ViewState();
+  State<OperaSearch> createState() => _OperaSearchState();
 }
 
-class _Opera_HomeTab_ViewState extends State<Opera_HomeTab_View> {
+class _OperaSearchState extends State<OperaSearch> {
 
   OperaProvider? opT;
   OperaProvider? opF;
@@ -20,6 +21,7 @@ class _Opera_HomeTab_ViewState extends State<Opera_HomeTab_View> {
 
   InAppWebViewController? webcontroller;
   PullToRefreshController? pullToRefreshController;
+
 
   @override
   void initState() {
@@ -33,18 +35,17 @@ class _Opera_HomeTab_ViewState extends State<Opera_HomeTab_View> {
   @override
   Widget build(BuildContext context) {
 
-    opT = Provider.of<OperaProvider>(context);
-    opF = Provider.of<OperaProvider>(context, listen: false);
+    String link = ModalRoute.of(context)!.settings.arguments as String;
 
-    int index = ModalRoute.of(context)!.settings.arguments as int;
+    opT = Provider.of<OperaProvider>(context);
+    opF = Provider.of<OperaProvider>(context,listen:false);
 
     return SafeArea(
       child: Scaffold(
-
         body: InAppWebView(
 
           initialUrlRequest:
-          URLRequest(url: Uri.parse("${opT!.platformlist[index].link}")),
+          URLRequest(url: Uri.parse("https://www.google.com/search?q=$link")),
 
           onLoadStart: (controller, url) {
             webcontroller = controller;
@@ -66,7 +67,6 @@ class _Opera_HomeTab_ViewState extends State<Opera_HomeTab_View> {
 
 
         ),
-
 
       ),
     );

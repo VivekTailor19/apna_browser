@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 
-import 'opera_provider.dart';
+import '../provider/opera_provider.dart';
 
 class Opera_First extends StatefulWidget {
   const Opera_First({Key? key}) : super(key: key);
