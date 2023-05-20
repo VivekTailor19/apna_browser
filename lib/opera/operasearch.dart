@@ -1,7 +1,8 @@
-import 'package:advanceflutter/screen/opera/opera_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:provider/provider.dart';
+
+import 'opera_provider.dart';
 
 class OperaSearch extends StatefulWidget {
   const OperaSearch({Key? key}) : super(key: key);

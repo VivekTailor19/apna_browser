@@ -1,8 +1,9 @@
-import 'package:advanceflutter/screen/opera/opera_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+
+import 'opera_provider.dart';
 
 class Opera_First extends StatefulWidget {
   const Opera_First({Key? key}) : super(key: key);
@@ -39,21 +40,24 @@ class _Opera_FirstState extends State<Opera_First> {
             child: Column(
               children: [
 
-                Row(
+                Row(crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    IconButton(icon: Icon(Icons.loop), onPressed: () {}),
+                    IconButton(icon: Icon(Icons.tune_rounded,color: Colors.white),
+                      onPressed: () {
+                         Navigator.pushNamed(context, "speeddial");
+                        },
+                    ),
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15),
+                  padding: EdgeInsets.only(bottom: 10),
                   child: TextField(
                     controller: txtsearch,
                     style: TextStyle(fontSize: 15, color: Colors.black54),
 
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.symmetric(horizontal: 30),
-
 
                         filled: true,
                         fillColor: Colors.white,
@@ -99,7 +103,7 @@ class _Opera_FirstState extends State<Opera_First> {
                 Expanded(
                   child: GridView.builder(
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 4),
+                        crossAxisCount: 5),
                     itemCount: opT!.platformlist.length,
                     itemBuilder: (context, index) => InkWell(
                       onTap: () {
@@ -112,6 +116,34 @@ class _Opera_FirstState extends State<Opera_First> {
                     ),
                   ),
                 ),
+                
+                Container(height: 300,width: double.infinity,
+                  margin: EdgeInsets.symmetric(vertical: 15),
+
+                  decoration: BoxDecoration(borderRadius: BorderRadius.circular(15),color: Colors.white),
+                  alignment: Alignment.center,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+
+                      Icon(Icons.article_rounded,size: 45,color: Colors.indigo,),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Text("Get personalised news",style: TextStyle(fontSize: 25),),
+                      ),
+                      SizedBox(height:8),
+
+                      Text("Select one or more interests to customise your newsfeed.",style: TextStyle(fontSize: 20),maxLines: 2,textAlign: TextAlign.center,),
+                      SizedBox(height:15),
+                      ElevatedButton(onPressed: (){},
+                          child: Text("Customise news",style: TextStyle(color: Colors.white)),
+                          style: ElevatedButton.styleFrom(backgroundColor: Colors.indigo),
+                      ),
+                      TextButton(onPressed: () {}, child: Text("Dismiss",style: TextStyle(color: Colors.indigo),))
+                      
+                    ],
+                  )
+                )
               ],
             ),
           ),
@@ -127,16 +159,16 @@ class _Opera_FirstState extends State<Opera_First> {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          height: 55,
-          width: 55,
+          height: 35,
+          width: 35,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(5),
               image: DecorationImage(image: NetworkImage("$image"),fit: BoxFit.fill)),
         ),
         SizedBox(height: 8),
         Text(
           "$name",
-          style: TextStyle(fontSize: 13,overflow: TextOverflow.ellipsis,color: Colors.white),
+          style: TextStyle(fontSize: 10,overflow: TextOverflow.ellipsis,color: Colors.white),
         )
       ],
     );
